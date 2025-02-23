@@ -50,6 +50,13 @@
   }
 }
 
+/* I-rush colour Scheme */
+:root{
+  --color-Kilimanjaro: #c6d728;
+  --color-Kenya: #292929;
+  --color-RasDashen: #494949;
+}
+
 *,
 *::before,
 *::after {

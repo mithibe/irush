@@ -1,15 +1,19 @@
 <script setup lang="ts">
 </script>
 <template>
-    <nav>
-        <ul>
-            <li><a href="#Home">1</a></li>
-            <li><a href="#About">2</a></li>
-            <li><a href="#Services">3</a></li>
-            <li><a href="#Contact">4</a></li>
-        </ul>
-    </nav>
-    <div class="Page Hero" id="Home">
+  <div class="HomePage">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#Home">1</a></li>
+                <li><a href="#About">2</a></li>
+                <li><a href="#Services">3</a></li>
+                <li><a href="#Contact">4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="Page Hero" id="Home">
         <div class="MajorSection first">
             <h1>Graphics, Animation and Web Development --- Fast & Flawless!</h1>
             <p>
@@ -35,11 +39,11 @@
     <div class="Page Services" id="Services">
         <div class="MajorSection first">
             <h1>SERVICES</h1>
-            <ul>
-                <li>Graphic Design - Stunning visuals that capture your brand's identity, from logos and branding to marketing materials and UI/UX design.</li>
-                <li>Animation - Bring ideas to life with high-quality 2D & 3D animations, motion graphics and explainer videos.</li>
-                <li>Web Development - Custom-built websites, e-commerce platforms and web application designed for performance and user experience.</li>
-            </ul>
+                <ul>
+                    <li>Graphic Design - Stunning visuals that capture your brand's identity, from logos and branding to marketing materials and UI/UX design.</li>
+                    <li>Animation - Bring ideas to life with high-quality 2D & 3D animations, motion graphics and explainer videos.</li>
+                    <li>Web Development - Custom-built websites, e-commerce platforms and web application designed for performance and user experience.</li>
+                </ul>
         </div>
         <div class="MajorSection second"></div>
     </div>
@@ -52,6 +56,8 @@
         <div class="MajorSection second"></div>
     </div> -->
     <div class="Page Contact" id="Contact"></div>
+    </main>
+  </div>
 </template>
 
 <style scoped>
@@ -60,15 +66,35 @@
         margin: 0;
         padding: 0;
     }
-    template{
+    .HomePage{
+        /* position: relative; */
+        display: grid;
+        grid: 
+        "body sidebar" 1fr
+        / 1fr auto;
+        gap: 8px;
         min-height: 100%;
+        width: 100%;
         overflow:hidden;
         scroll-behavior: smooth;
         /* scroll-snap-type: mandatory; */
     }
 
+    header{
+        grid-area: sidebar;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        width: 5%;
+    }
+
+    main{
+        grid-area: body;
+        width: 90%;
+    }
+
     nav{
-        position: fixed;
+        /* position: absolute; */
         right: 100px;
         min-height: 100vh;
         border: none;
@@ -76,7 +102,7 @@
 
     nav ul{
         position: relative;
-        height: 100vh;
+        height: 90vh;
         /* border: 1px solid #aaa; */
         display: flex;
         flex-direction: column;
@@ -133,24 +159,27 @@
     .Page{
         min-height: 100vh;
         display: flex;
-        border: 2px solid #c6d728;
+        /* border: 2px solid #c6d728; */
     }
 
     .MajorSection{
         /* position: relative; */
         max-width: 50%;
         /* height: 100%; */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        border: 2px solid #aaa;
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* justify-content: space-around; */
+        /* border: 2px solid #aaa; */
         flex-grow: 1;
         margin: 0;
         padding: 0;
+        font-size: 24px;
+        color: #eee;
     }
 
     img{
         max-width: 100%;
+        height: 80%;
         width: auto;
         display: block;
     }
@@ -158,6 +187,11 @@
     h1{
         color: #c6d728;
         font-weight: 700;
+        font-size: 50px;
+    }
+
+    p{
+        font-size: 24px;
     }
 
     button{
@@ -169,5 +203,21 @@
         font-weight: 700;
         border-radius: 10px;
         border: none;
+    }
+
+    .Hero h1{
+       font-size: 80px;
+       font-weight: 800;
+    }
+
+    .Hero p{
+        font-size: 28px;
+        color: #eee;
+        margin: 50px 0;
+    }
+
+    .Hero button{
+        width: 50%;
+        height: 70px;
     }
 </style>
